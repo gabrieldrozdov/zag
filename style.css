@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+	pointer-events: none;
+}
+.container {
+	width: 100vw;
+	height: 100dvh;
+	position: relative;
+	overflow: hidden;
+}
+.player {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	object-fit: contain;
+	image-rendering: pixelated;
+}
+.player img {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.player[data-state="idle"] .player-idle {
+	display: block;
+}
+.player[data-state="walk"] .player-walk {
+	display: block;
+}
+.avatar {
+	width: 100%;
+	height: 100%;
+}
+.player[data-dir='left'] .avatar {
+	transform: rotateY(180deg);
+}
