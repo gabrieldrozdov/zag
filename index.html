@@ -3,13 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>The End</title>
+	<title>Zag</title>
+
+	<meta name="author" content="Gabriel Drozdov">
+	<meta name="keywords" content="Creative Coding, Toy, Game, Web Design, Web Development">
+	<meta name="description" content="This is all zag, no zig. Nothing til it’s something. Get it?">
+	<meta property="og:url" content="https://zag.noreplica.com/">
+	<meta name="og:title" property="og:title" content="Zag">
+	<meta property="og:description" content="This is all zag, no zig. Nothing til it’s something. Get it?">
+	<meta property="og:image" content="./opengraph.jpg">
+	<link rel="icon" type="image/png" href="favicon.png"/>
+
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="container">
-		<main class="game">
-		</main>
+		<main class="game"></main>
+	</div>
+
+	<div class="help-toggle" onclick="openHelp();">?</div>
+	<div class="help">
+		<div class="help-close" onclick="openHelp();">X</div>
+		<p>This is all zag, no zig. Nothing til it’s something. Get it?</p>
+		<p><strong>CLICK</strong> and <strong>DRAG</strong> to see them fly. When they reach you, they’ll feel shy.</p>
+		<p>Hold down <strong>SPACE</strong> and they’ll go home.</p>
+		<p>Use the <strong>ARROW KEYS</strong> to watch them roam.</p>
 	</div>
 
 	<script src="script.js"></script>

@@ -8,13 +8,20 @@
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently */
-	pointer-events: none;
+	font-family: "Times New Roman", serif;
 }
 .container {
 	width: 100vw;
 	height: 100dvh;
 	position: relative;
 	overflow: hidden;
+	cursor: crosshair;
+}
+.container:active {
+	cursor: move;
+}
+.game, .game * {
+	pointer-events: none;
 }
 .player {
 	position: absolute;
@@ -41,4 +48,59 @@
 }
 .player[data-dir='left'] .avatar {
 	transform: rotateY(180deg);
+}
+.help-toggle {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	border: 1px solid gray;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 99998;
+	cursor: pointer;
+	font-size: 16px;
+	background-color: yellow;
+}
+.help-toggle:hover {
+	background-color: gray;
+	color: white;
+}
+.help-toggle:active {
+	opacity: .5;
+}
+.help {
+	position: absolute;
+	max-width: 90vw;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	text-wrap: pretty;
+	border: 1px solid gray;
+	background-color: white;
+	font-size: 16px;
+	display: none;
+	z-index: 99999;
+	padding: 10px;
+	gap: 10px;
+	flex-direction: column;
+}
+.help-close {
+	padding: 5px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-color: yellow;
+	font-family: sans-serif;
+	cursor: pointer;
+}
+.help-close:hover {
+	background-color: black;
+	color: yellow;
+}
+.help-close:active {
+	opacity: .5;
 }

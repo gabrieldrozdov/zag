@@ -207,3 +207,13 @@ function gameLoop() {
 
 generatePlayers(500);
 gameLoop();
+
+// Help
+function openHelp() {
+	const help = document.querySelector(".help");
+	help.style.display = "flex";
+}
+function closeHelp() {
+	const help = document.querySelector(".help");
+	help.style.display = "none";
+}
