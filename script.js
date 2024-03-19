@@ -5,8 +5,12 @@ let mouseActive = false;
 document.addEventListener('keydown', addKey);
 document.addEventListener('keyup', removeKey);
 document.addEventListener('mousedown', () => {mouseActive = true});
+document.addEventListener('touchstart', () => {mouseActive = true});
 document.addEventListener('mouseup', () => {mouseActive = false});
+document.addEventListener('touchend', () => {mouseActive = false});
 document.addEventListener('mousemove', setMouse);
+document.addEventListener('touchmove', setMouse);
+document.addEventListener('touchstart', setMouse);
 function addKey(e) {
 	if (Object.keys(playerInput).includes(e.key)) {
 		playerInput[e.key] = 1;
@@ -18,7 +22,7 @@ function removeKey(e) {
 	}
 }
 function setMouse(e) {
-	mousePos = [e.clientX, e.clientY];
+	mousePos = [e.clientX || e['touches'][0]['screenX'], e.clientY || e['touches'][0]['screenY']];
 }
 
 class Player {
