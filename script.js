@@ -196,7 +196,6 @@ function generatePlayers(total) {
 }
 
 // Main game loop
-let frameRate = 17;
 function gameLoop() {
 	for (let player of players) {
 		player.move();
@@ -206,10 +205,10 @@ function gameLoop() {
 		// 	player.changeParams();
 		// }
 	}
-	setTimeout(gameLoop, frameRate);
+	requestAnimationFrame(gameLoop);
 }
 
-generatePlayers(500);
+generatePlayers(100);
 gameLoop();
 
 // Help
